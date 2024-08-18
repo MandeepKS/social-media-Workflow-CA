@@ -2,7 +2,7 @@ describe("An invalid login to the Noroff Social App", () => {
   it("When provided incorrect credentials, user should not get a valid login page", () => {
     cy.visit("/");
 
-    cy.fixture("loginInValid.json").then((loginValid) => {
+    cy.fixture("loginInvalid.json").then((loginValid) => {
       cy.get("input#loginEmail").type(loginValid.email, { force: true });
       cy.get("input#loginPassword").type(loginValid.password, { force: true });
     });
