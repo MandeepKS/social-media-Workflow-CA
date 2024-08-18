@@ -1,13 +1,44 @@
-//Test
+import { login } from "./login";
 
-// describe("Login", () =>{
+// Mock local storage
+global.localStorage = {
+  store: {},
+  getItem(key) {
+    return this.store[key] || null;
+  },
+  setItem(key, value) {
+    this.store[key] = value.toString();
+  },
+  removeItem(key) {
+    delete this.store[key];
+  },
+  clear() {
+    this.store = {};
+  },
+};
 
-//     // Reset mocks
-//     afterEach(() =>{
-//         jest.restAllMocks();
-//     });
-// });
+// Fetch
+global.fetch = jest.fn(() =>
+  Promise.resolve({
+    ok: true,
+    json: () => Promise.resolve({ success: true, accessToken: "testToken" }),
+  }),
+);
 
-test("It adds 1 and 2 and gets 3 as a result", () => {
-  expect(1 + 2).toEqual(3);
+// Test
+describe("Login", () => {
+  beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  it("creates a token with a successful login", async () => {
+    const email = "deepsalhan@nokas.com";
+    const password = "Testing123";
+    await login(email, password);
+
+    const storedToken = localStorage.getItem("token");
+    const parsedToken = storedToken && JSON.parse(storedToken);
+
+    expect(parsedToken).toEqual("testToken");
+  });
 });
