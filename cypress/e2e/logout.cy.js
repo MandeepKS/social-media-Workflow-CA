@@ -1,5 +1,5 @@
-describe("A valid login to the Noroff Social App", () => {
-  it("When provided the correct credentials, you should get an valid login", () => {
+describe("Logout from the Noroff Social App", () => {
+  it("Successfully logout, you can log in with the login form with valid credentials", () => {
     cy.visit("/");
     cy.wait(300);
     cy.get('button[data-auth="login"]').last().click();
@@ -17,6 +17,16 @@ describe("A valid login to the Noroff Social App", () => {
     cy.window().then((win) => {
       const token = win.localStorage.getItem("token");
       expect(token).not.to.be.empty;
+    });
+
+    //Log out
+    cy.wait(3000);
+    cy.get('button[data-auth="logout"]').first().click();
+
+    // Check the token in local storage after successful logout
+    cy.window().then((win) => {
+      const token = win.localStorage.getItem("token");
+      expect(token).to.be.null;
     });
   });
 });
