@@ -1,4 +1,4 @@
-[![Automated E2E Testing](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-e2e.yml/badge.svg)]
+[![Automated E2E Testing](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-e2e.yml/badge.svg)
 
 # Noroff Workflow CA
 
