@@ -1,5 +1,5 @@
 [![Automated E2E Testing](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-e2e.yml/badge.svg)](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-e2e.yml)
-[![Automated Unit Testing](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-unit.yml)](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-unit.yml)
+[![Automated Unit Testing](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-unit.ymll/badge.svg)](https://github.com/MandeepKS/social-media-Workflow-CA/actions/workflows/test-unit.yml)
 
 # Noroff Workflow CA
 
